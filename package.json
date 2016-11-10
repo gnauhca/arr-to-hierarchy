@@ -1,0 +1,16 @@
+{
+  "name": "arr-to-hierarchy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "arr-to-hierarchy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zzc",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "gulp": "^3.9.1"
+  }
+}

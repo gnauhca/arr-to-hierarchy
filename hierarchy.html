@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>itservice</title>
+<!--<script type="text/javascript" src="data.js"></script>-->
+<script type="text/javascript" src="node_modules/clipboard/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="datawheretobuy.js"></script>
+</head>
+<body>
+	<!--<buttton class="btn" data-clipboard-text="aaasdfa">copy</buttton>-->
+<script type="text/javascript">
+
+/*var keyMap = {
+	'Region': 'regionName',
+	'City': 'cityName',
+	'Name of Collecting Point': 'storeName',
+	'Address': 'address',
+	'ZIP': 'zip',
+	'County': 'county',
+	'GPS Coordinates': 'gps',
+	'Phone Nr.': 'phone',
+	'Fax Nr.': 'fax',
+};*/
+var keyMap = {
+	'Region': 'regionName',
+	'City': 'cityName',
+	'POS Name': 'storeName',
+	'Address': 'address',
+	'ZIP': 'zip',
+	'County': 'county',
+	'GPS Coordinates': 'gps',
+	'Phone Nr.': 'phone',
+	'Fax Nr.': 'fax',
+	"Customer Name": 'customerName'
+};
+
+
+var hierarchyCfg = [
+	{
+		'rawKey': 'Region',
+		'next': 'citys'
+	},
+	{
+		'rawKey': 'City',
+		'next': 'stores'
+	},
+];
+
+
+
+
+
+
+var parsed = JSON.stringify(hierachyDatas, null, 2)
+		.replace(/[\[\{]/g, 'array(')
+		.replace(/[\]\}]\,/g, '}')
+		.replace(/[\]\}]/g, '),')
+		.replace(/\:/g,' =>');
+
+document.write('<pre>' + parsed + '</pre>');
+
+/*new Clipboard('.btn', {
+    text: function(trigger) {
+		alert(parsed);
+        return parsed;
+    }
+});*/
+
+
+/*raws.forEach(function(raw) {
+	var hierarchy = 1;
+
+	datas.forEach(function(data) {
+		if (data.regionName === regionName) {
+
+			data.citys.forEach(function(city) {
+				if (city.cityName === raw['City']) {
+				}
+			});
+
+
+		}
+	});
+});*/
+
+
+
+</script>
+</body>
+</html>

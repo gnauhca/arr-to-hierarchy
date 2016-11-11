@@ -5,31 +5,29 @@
             data = {};
             for (var key in keyMap) {
 
-                if (hierarchyCfg.every(function (cfg) { return key !== cfg.key; })) {
-                    data[key] = raw[keyMap[key]];
+                if (hierarchyCfg.every(function (cfg) { return key !== cfg.rawKey; })) {
+                    data[keyMap[key]] = raw[key];
                 }
             }
             hierachyDatas.push(data);
         } else {
 
             if (!hierachyDatas.some(function (data) {
-                if (data[hierarchyCfg[curHierarchy].key] ===
-                    raw[keyMap[hierarchyCfg[curHierarchy].key]]) {
+                if (data[keyMap[hierarchyCfg[curHierarchy].rawKey]] ===
+                    raw[hierarchyCfg[curHierarchy].rawKey]) {
 
                     getHierachyDatas(
                         raw,
                         data[hierarchyCfg[curHierarchy].next],
                         curHierarchy + 1,
-                        hierarchyCfg,
-                        keyMap
+                        hierarchyCfg
                     );
 
                     return true;
                 }
             })) {
-                // console.log(keyMap);
                 data = {};
-                data[hierarchyCfg[curHierarchy].key] = raw[keyMap[hierarchyCfg[curHierarchy].key]];
+                data[keyMap[hierarchyCfg[curHierarchy].rawKey]] = raw[hierarchyCfg[curHierarchy].rawKey];
                 data[hierarchyCfg[curHierarchy].next] = [];
 
                 hierachyDatas.push(data);
@@ -37,8 +35,7 @@
                     raw,
                     data[hierarchyCfg[curHierarchy].next],
                     curHierarchy + 1,
-                    hierarchyCfg,
-                    keyMap
+                    hierarchyCfg
                 );
             }
         }

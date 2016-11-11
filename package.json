@@ -1,16 +1,26 @@
 {
   "name": "arr-to-hierarchy",
   "version": "1.0.0",
-  "description": "",
+  "description": "arr-to-hierarchy",
   "main": "arr-to-hierarchy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
+  "repository": "https://github.com/zhzhchwin/arr-to-hierarchy",
   "author": "zzc",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.9.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2",
+    "mocha": "^3.1.2"
   }
 }

@@ -17,7 +17,7 @@ gulp.task('min',  function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('dest'))
-        .pipe(notify({ message: 'js min ok' }));
+        // .pipe(notify({ message: 'js min ok' }));
 });
 
 gulp.task('default', ['min', 'lint']);
